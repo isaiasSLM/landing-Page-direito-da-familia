@@ -67,7 +67,7 @@ body {
 /* Media queries para dispositivos móveis */
 @media (max-width: 768px) {
   .header {
-    padding: 40px 10px;
+    padding: 250px 10px;
     /* Ajuste o preenchimento */
   }
 
@@ -250,6 +250,17 @@ body {
   /* Espaçamento inferior para a seção de serviços */
 }
 
+@media (max-width: 600px) {
+  .about {
+      max-width: 600px;
+  }
+
+  .about-text {
+    max-width: 400px;
+  }
+}
+
+
 .photo-gallery {
   margin-top: 40px;
   /* Espaçamento superior para a seção de feedbacks */
@@ -272,6 +283,7 @@ body {
   /* Centraliza o texto */
 }
 
+
 .photo-gallery h2 {
   color: #181919;
   /* Cor do título */
@@ -280,6 +292,13 @@ body {
   margin-bottom: 15px;
   /* Espaçamento inferior */
 }
+
+@media (max-width: 600px) {
+  .photo-gallery {
+    max-width: 400px;
+  }
+}
+
 
 .carousel {
   position: relative;
