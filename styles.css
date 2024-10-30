@@ -252,7 +252,7 @@ body {
 
 @media (max-width: 600px) {
   .about {
-      max-width: 600px;
+    max-width: 550px;
   }
 
   .about-text {
