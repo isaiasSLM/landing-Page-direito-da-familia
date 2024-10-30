@@ -1,0 +1,820 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F2F2F2;
+  color: #364559;
+  padding-top: 0px;
+  background: linear-gradient(135deg, #364559, #1D8FF2);
+}
+
+
+
+.about,
+.services,
+.feedbacks,
+.form-section,
+.rede {
+  width: 80%;
+  max-width: 800px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+.header {
+  width: 100%;
+  margin: 0px auto;
+  text-align: center;
+  background: url('img/fundo.png') center/cover no-repeat;
+  /* Adicione sua imagem aqui */
+  color: #ffffff;
+  padding: 450px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: top 0.3s;
+  z-index: 1000;
+}
+
+.header h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+  /* Aumentar a sombra e torná-la mais difusa */
+  color: rgb(251, 251, 251);
+  /* Cor branca para maior contraste */
+}
+
+.header p {
+  font-size: 1.3em;
+  margin-bottom: 25px;
+  opacity: 1;
+  /* Remover a opacidade para melhor visibilidade */
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+  /* Aumentar a sombra e torná-la mais difusa */
+  color: rgb(255, 255, 255);
+  /* Manter a cor branca com leve transparência */
+}
+
+
+/* Media queries para dispositivos móveis */
+@media (max-width: 768px) {
+  .header {
+    padding: 40px 10px;
+    /* Ajuste o preenchimento */
+  }
+
+  .header h1 {
+    font-size: 2em;
+    /* Reduza o tamanho da fonte para cabeçalho em telas menores */
+  }
+
+  .header p {
+    font-size: 1em;
+    /* Reduza o tamanho da fonte do parágrafo */
+  }
+
+}
+
+
+@keyframes slideBg {
+  from {
+    transform: translateX(0) rotate(25deg);
+  }
+
+  to {
+    transform: translateX(-100%) rotate(25deg);
+  }
+}
+
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.header h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+  font-size: 1.3em;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1em;
+  color: #1D8FF2;
+  background-color: #ffffff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Classe base para ocultar elementos inicialmente */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Classe que será adicionada quando o elemento estiver visível na tela */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.cta-button:hover {
+  background-color: #2C3740;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1em;
+  color: #1D8FF2;
+  background-color: #ffffff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #2C3740;
+  color: #ffffff;
+}
+
+.about {
+  background-color: #ffffff;
+  /* Fundo branco */
+  padding: 30px;
+  /* Espaçamento interno */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra leve */
+  margin: 20px auto;
+  /* Margem superior e inferior */
+  max-width: 800px;
+  /* Largura máxima */
+  text-align: center;
+  /* Centraliza o texto */
+}
+
+.about h2 {
+  color: #151313;
+  /* Cor do título */
+  font-size: 2em;
+  /* Tamanho da fonte */
+  margin-bottom: 15px;
+}
+
+.about-content {
+  display: flex;
+  /* Alinhamento horizontal */
+  flex-direction: column;
+  /* Direção vertical */
+  align-items: center;
+  /* Centraliza horizontalmente */
+}
+
+.about-image {
+  width: 150px;
+  /* Largura da imagem */
+  height: 150px;
+  /* Altura da imagem */
+  border-radius: 50%;
+  /* Borda arredondada (círculo) */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  /* Sombra leve */
+  transition: transform 0.3s;
+  /* Transição suave */
+  margin-bottom: 20px;
+  /* Espaçamento abaixo da imagem */
+}
+
+.about-image:hover {
+  transform: scale(1.05);
+  /* Efeito de aumento ao passar o mouse */
+}
+
+.about-text {
+  color: #364559;
+  /* Cor do texto */
+  line-height: 2.6;
+  /* Aumenta a altura da linha para melhor legibilidade */
+  font-size: 1.1em;
+  /* Aumenta um pouco o tamanho da fonte para melhor leitura */
+  margin: 0 auto;
+  /* Centraliza o texto se houver largura máxima */
+  max-width: 800px;
+  /* Limita a largura do texto para melhorar a legibilidade */
+  padding: 15px;
+  /* Adiciona espaçamento interno */
+  background-color: #f7f5f54a;
+  /* Adiciona um fundo claro para destacar o texto */
+  border-radius: 8px;
+  /* Arredonda os cantos do fundo */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  /* Adiciona uma leve sombra para profundidade */
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  /* Adiciona espaço entre os parágrafos */
+}
+
+
+.about {
+  margin-bottom: 40px;
+  /* Espaçamento inferior para a seção de serviços */
+}
+
+.photo-gallery {
+  margin-top: 40px;
+  /* Espaçamento superior para a seção de feedbacks */
+}
+
+.photo-gallery {
+  background-color: #f2f2f2;
+  /* Fundo cinza claro */
+  padding: 30px;
+  /* Espaçamento interno */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra leve */
+  margin: 20px auto;
+  /* Margem superior e inferior */
+  max-width: 800px;
+  /* Largura máxima */
+  text-align: center;
+  /* Centraliza o texto */
+}
+
+.photo-gallery h2 {
+  color: #181919;
+  /* Cor do título */
+  font-size: 2em;
+  /* Tamanho da fonte */
+  margin-bottom: 15px;
+  /* Espaçamento inferior */
+}
+
+.carousel {
+  position: relative;
+  /* Para posicionar as imagens */
+  overflow: hidden;
+  /* Esconde imagens fora da área visível */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+}
+
+.carousel-images {
+  display: flex;
+  /* Exibe as imagens em linha */
+  transition: transform 0.5s ease-in-out;
+  /* Transição suave */
+}
+
+.carousel-image {
+  min-width: 100%;
+  /* Largura mínima igual à largura do contêiner */
+  border-radius: 8px;
+  /* Bordas arredondadas para imagens */
+}
+
+
+.prev {
+  left: 10px;
+  /* Posiciona o botão anterior à esquerda */
+}
+
+.next {
+  right: 10px;
+  /* Posiciona o botão próximo à direita */
+}
+
+.carousel-image {
+  margin-bottom: 40px;
+  /* Espaçamento inferior para a seção de serviços */
+}
+
+.services {
+  margin-top: 40px;
+  /* Espaçamento superior para a seção de feedbacks */
+}
+
+.services h2,
+.feedbacks h2,
+.form-section h2,
+.rede h3,
+.footer h4 {
+  color: #090909;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.services .service {
+  background-color: #ffffff;
+  /* Fundo branco para os serviços */
+  padding: 20px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  /* Borda suave */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra leve */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Transições suaves */
+}
+
+.services .service:hover {
+  transform: translateY(-5px);
+  /* Elevação ao passar o mouse */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra mais forte ao passar o mouse */
+}
+
+.services h3 {
+  color: #2C3740;
+  /* Cor do título */
+  font-family: 'Arial', sans-serif;
+  /* Tipografia */
+  font-weight: 700;
+  /* Negrito */
+  font-size: 1.5em;
+  /* Tamanho do título */
+  margin-bottom: 10px;
+  /* Margem abaixo do título */
+  text-transform: uppercase;
+  /* Letras maiúsculas */
+  letter-spacing: 1px;
+  /* Espaçamento entre letras */
+}
+
+.services p {
+  color: #555;
+  /* Cor do texto da descrição */
+  font-size: 1em;
+  /* Tamanho do texto da descrição */
+  margin-bottom: 15px;
+  /* Margem abaixo da descrição */
+  line-height: 1.6;
+  /* Altura da linha para melhor legibilidade */
+}
+
+.services {
+  background-color: #f9f9f9;
+  /* Fundo suave para a seção */
+  padding: 40px 20px;
+  /* Espaçamento na seção */
+  border-radius: 10px;
+  /* Bordas arredondadas para a seção */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  /* Sombra para a seção */
+}
+
+.services .service {
+  background-color: #ffffff;
+  /* Fundo branco para os serviços */
+  padding: 25px;
+  /* Espaçamento interno aumentado */
+  margin: 15px 0;
+  /* Margem entre os serviços */
+  border: 1px solid #e0e0e0;
+  /* Borda suave */
+  border-radius: 10px;
+  /* Bordas arredondadas */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  /* Transições suaves */
+}
+
+.services .service:hover {
+  transform: translateY(-5px);
+  /* Elevação ao passar o mouse */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+  /* Sombra mais forte ao passar o mouse */
+  background-color: #f1f1f1;
+  /* Mudança de cor de fundo ao passar o mouse */
+}
+
+.services h2 {
+  text-align: center;
+  /* Centraliza o título da seção */
+  color: #1D8FF2;
+  /* Cor do título da seção */
+  font-family: 'Arial', sans-serif;
+  /* Tipografia */
+  font-size: 2.2em;
+  /* Tamanho do título da seção */
+  margin-bottom: 30px;
+  /* Margem abaixo do título da seção */
+  text-transform: uppercase;
+  /* Letras maiúsculas */
+  letter-spacing: 2px;
+  /* Espaçamento entre letras */
+}
+
+.services h3 {
+  color: #2C3740;
+  /* Cor do título do serviço */
+  font-family: 'Arial', sans-serif;
+  /* Tipografia */
+  font-weight: 700;
+  /* Negrito */
+  font-size: 1.5em;
+  /* Tamanho do título do serviço */
+  margin-bottom: 10px;
+  /* Margem abaixo do título do serviço */
+  text-transform: capitalize;
+  /* Primeira letra maiúscula */
+  letter-spacing: 0.5px;
+  /* Espaçamento entre letras */
+}
+
+.services p {
+  color: #555;
+  /* Cor do texto da descrição */
+  font-size: 1em;
+  /* Tamanho do texto da descrição */
+  margin-bottom: 15px;
+  /* Margem abaixo da descrição */
+  line-height: 1.6;
+  /* Altura da linha para melhor legibilidade */
+}
+
+.services button {
+  background-color: #1D8FF2;
+  /* Cor do botão */
+  color: #ffffff;
+  /* Cor do texto do botão */
+  border: none;
+  /* Remove bordas padrão */
+  padding: 10px 20px;
+  /* Espaçamento interno do botão */
+  border-radius: 5px;
+  /* Bordas arredondadas no botão */
+  font-size: 1em;
+  /* Tamanho do texto do botão */
+  cursor: pointer;
+  /* Muda o cursor ao passar sobre o botão */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Transições suaves */
+}
+
+.services button:hover {
+  background-color: #5CB9F2;
+  /* Mudança de cor ao passar o mouse */
+  transform: scale(1.05);
+  /* Leve aumento ao passar o mouse */
+}
+
+button {
+  background-color: #5CB9F2;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1D8FF2;
+}
+
+.services {
+  margin-bottom: 40px;
+  /* Espaçamento inferior para a seção de serviços */
+}
+
+.feedbacks {
+  margin-top: 40px;
+  /* Espaçamento superior para a seção de feedbacks */
+}
+
+.feedbacks {
+  background-color: #f2f2f2;
+  /* Fundo suave para a seção de feedbacks */
+  padding: 40px 20px;
+  /* Espaçamento interno da seção */
+  border-radius: 10px;
+  /* Bordas arredondadas para a seção */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  /* Sombra mais pronunciada */
+  text-align: center;
+  /* Centraliza o texto */
+}
+
+.feedbacks h2 {
+  color: #1D8FF2;
+  /* Cor do título */
+  font-family: 'Arial', sans-serif;
+  /* Tipografia */
+  font-size: 2.2em;
+  /* Tamanho do título */
+  margin-bottom: 30px;
+  /* Margem abaixo do título */
+  text-transform: uppercase;
+  /* Letras maiúsculas */
+  letter-spacing: 2px;
+  /* Espaçamento entre letras */
+}
+
+.feedback {
+  background-color: #ffffff;
+  /* Fundo branco para os depoimentos */
+  padding: 25px;
+  /* Espaçamento interno aumentado */
+  margin: 15px 0;
+  /* Margem entre os depoimentos */
+  border-radius: 10px;
+  /* Bordas arredondadas */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Transições suaves */
+}
+
+
+/* Para um espaço ainda maior, você pode ajustar os valores de margem conforme necessário */
+
+.feedback:hover {
+  transform: translateY(-5px);
+  /* Elevação ao passar o mouse */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+  /* Sombra mais forte ao passar o mouse */
+}
+
+.feedback p {
+  font-size: 1.1em;
+  /* Tamanho do texto do depoimento */
+  color: #2C3740;
+  /* Cor do texto */
+  line-height: 1.5;
+  /* Altura da linha para melhor legibilidade */
+}
+
+.feedback span {
+  display: block;
+  /* Exibe como bloco */
+  margin-top: 10px;
+  /* Margem acima do nome */
+  font-weight: bold;
+  /* Texto em negrito */
+  color: #5CB9F2;
+  /* Cor do nome */
+  font-style: italic;
+  /* Estilo itálico para dar ênfase */
+}
+
+
+.form-section {
+  background-color: #F2F2F2;
+  /* Cor de fundo para destaque */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* Centraliza o texto */
+  margin-top: 40px;
+  /* Espaço acima da seção */
+}
+
+.form-section h2 {
+  color: #364559;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+form label {
+  color: #364559;
+  margin-top: 10px;
+  font-weight: bold;
+  display: block;
+  /* Faz com que o rótulo ocupe toda a largura disponível */
+  text-align: left;
+  /* Alinha o texto à esquerda */
+}
+
+form input,
+form select {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 5px 0 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border 0.3s, box-shadow 0.3s;
+  /* Efeitos de transição */
+}
+
+form input:focus,
+form select:focus {
+  border: 2px solid #5CB9F2;
+  /* Destaque na borda ao focar */
+  box-shadow: 0px 0px 5px rgba(92, 185, 242, 0.5);
+  /* Efeito de sombra */
+}
+
+button {
+  background-color: #5CB9F2;
+  /* Cor de fundo do botão */
+  color: white;
+  /* Cor do texto do botão */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  /* Efeitos de transição */
+}
+
+button:hover {
+  background-color: #1D8FF2;
+  /* Cor ao passar o mouse */
+  transform: scale(1.05);
+  /* Leve aumento ao passar o mouse */
+}
+
+.form label {
+  margin-bottom: 40px;
+  /* Espaçamento inferior para a seção de serviços */
+}
+
+.rede {
+  margin-top: 40px;
+  /* Espaçamento superior para a seção de feedbacks */
+}
+
+.rede {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/logo.png') center/cover no-repeat;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 150px 100px;
+  font-family: Arial, sans-serif;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rede h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  padding: 12px 25px;
+  border: 2px solid #FFFFFF;
+  border-radius: 30px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-thumbnail {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 12px;
+  transition: transform 0.3s;
+}
+
+.instagram-link:hover {
+  background-color: #FFFFFF;
+  color: #F58529;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-link:hover .instagram-thumbnail {
+  transform: scale(1.2);
+}
+
+.instagram-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(45deg);
+  transition: left 0.5s;
+}
+
+.instagram-link:hover::after {
+  left: 100%;
+}
+
+.footer {
+  background-color: #0b0b0b95;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  max-width: 12000px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+
+.footer .footer-column {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer h4 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #F2F2F2;
+}
+
+.footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #5CB9F2;
+}
+
+.footer .social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.footer .social-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  color: #1D8FF2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.footer .social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.footer .contact-info p {
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: #F2F2F2;
+}
+
+.footer .copyright {
+  text-align: center;
+  font-size: 0.85em;
+  color: #D9D9D9;
+  margin-top: 30px;
+}

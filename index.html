@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advocacia em Direito de Família</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Cabeçalho Principal -->
+  <header class="header fade-in">
+    <div class="header-content fade-in">
+      <h1>Protegendo Seus Direitos e o Futuro da Sua Família</h1>
+      <p>Especialistas em Direito de Família, com compromisso e dedicação em cada caso.</p>
+      <a href="#service-form" class="cta-button">Solicite uma Consulta</a>
+    </div>
+  </header>
+
+  <!-- Sobre o Advogado -->
+  <section class="about fade-in">
+    <h2>Sobre o Advogado</h2>
+    <div class="about-content">
+      <img src="img/logo.png" alt="Foto do Advogado" class="about-image">
+      <div class="about-text fade-in">
+        <p>Com mais de 10 anos de experiência na área de direito de família, o advogado Alisson Santos é especialista em
+          oferecer soluções jurídicas personalizadas para cada cliente. Seu compromisso é garantir a proteção dos
+          direitos e interesses de seus clientes em todas as etapas do processo.</p>
+        <p>Ele é conhecido por sua abordagem empática e eficaz, sempre buscando a melhor resolução para cada caso. A
+          confiança dos seus clientes é seu maior ativo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-gallery fade-in">
+    <h2>Galeria Profissional</h2>
+    <div class="carousel">
+      <div class="carousel-images fade-in">
+        <img src="img/foto1.png" alt="Foto Profissional 1" class="carousel-image">
+        <img src="img/foto2.png" alt="Foto Profissional 2" class="carousel-image">
+        <img src="img/foto3.png" alt="Foto Profissional 3" class="carousel-image">
+      </div>
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section class="services fade-in">
+    <h2>Nossos Serviços</h2>
+
+    <div class="service fade-in">
+      <h3>Divórcio</h3>
+      <p>Auxiliamos na formalização do divórcio, garantindo que todos os aspectos legais sejam respeitados, desde a
+        divisão de bens até a guarda dos filhos.</p>
+      <button onclick="selecionarServico('Divórcio')">Solicitar Serviço</button>
+    </div>
+
+    <div class="service fade-in">
+      <h3>Divórcio para Mulheres</h3>
+      <p>Oferecemos suporte especializado para mulheres que estão passando pelo processo de divórcio, com foco em seus
+        direitos e necessidades específicas.</p>
+      <button onclick="selecionarServico('Divórcio para Mulheres')">Solicitar Serviço</button>
+    </div>
+
+    <div class="service fade-in">
+      <h3>Divórcio para Brasileiros no Exterior</h3>
+      <p>Assistência legal para brasileiros que desejam se divorciar enquanto residem no exterior, abordando as
+        particularidades da legislação internacional.</p>
+      <button onclick="selecionarServico('Divórcio para Brasileiros no Exterior')">Solicitar Serviço</button>
+    </div>
+
+    <div class="service fade-in">
+      <h3>Pedido de Pensão Alimentícia</h3>
+      <p>Auxiliamos na solicitação e regulamentação de pensão alimentícia, garantindo que os direitos dos filhos e do
+        cônjuge sejam respeitados.</p>
+      <button onclick="selecionarServico('Pedido de Pensão Alimentícia')">Solicitar Serviço</button>
+    </div>
+
+    <div class="service fade-in">
+      <h3>Inventários (Judicial e Extrajudicial)</h3>
+      <p>Prestamos assessoria na realização de inventários, seja judicial ou extrajudicial, facilitando a partilha de
+        bens entre os herdeiros.</p>
+      <button onclick="selecionarServico('Inventários')">Solicitar Serviço</button>
+    </div>
+
+    <div class="service fade-in">
+      <h3>Mudança de Nome</h3>
+      <p>Orientamos sobre o processo de mudança de nome, seja por motivos pessoais, legais ou familiares, assegurando a
+        documentação necessária.</p>
+      <button onclick="selecionarServico('Mudança de Nome')">Solicitar Serviço</button>
+    </div>
+
+  </section>
+
+  <!-- Feedbacks -->
+  <section class="feedbacks fade-in">
+    <h2>Depoimentos de Clientes</h2>
+    <div class="feedback">
+      <p>"O atendimento foi incrível! Me senti apoiado durante todo o processo."</p>
+      <span>— João Silva</span>
+    </div>
+    <div class="feedback">
+      <p>"Profissionalismo e empatia. Recomendo a todos!"</p>
+      <span>— Maria Oliveira</span>
+    </div>
+    <div class="feedback">
+      <p>"Excelente serviço, senti muita segurança e transparência."</p>
+      <span>— Lucas Santos</span>
+    </div>
+  </section>
+
+
+  <!-- Formulário de Contato -->
+  <section class="form-section fade-in">
+    <h2>Solicite um Serviço</h2>
+    <form id="service-form" onsubmit="enviarWhatsApp(event)">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required placeholder="Digite seu nome">
+
+      <label for="phone">Número de Telefone:</label>
+      <input type="text" id="phone" name="phone" required placeholder="Digite seu telefone">
+
+      <label for="service">Serviço Selecionado:</label>
+      <select id="service" name="service" required>
+        <option value="">Selecione um Serviço</option>
+        <option value="Divórcio">Divórcio</option>
+        <option value="Divórcio para Mulheres">Divórcio para Mulheres</option>
+        <option value="Divórcio para Brasileiros no Exterior">Divórcio para Brasileiros no Exterior</option>
+        <option value="Pedido de Pensão Alimentícia">Pedido de Pensão Alimentícia</option>
+        <option value="Inventários">Inventários (Judicial e Extrajudicial)</option>
+        <option value="Mudança de Nome">Mudança de Nome</option>
+      </select>
+
+      <button type="submit">Enviar Solicitação</button>
+    </form>
+  </section>
+
+
+  <!-- Redes Sociais -->
+  <section class="rede fade-in">
+    <h3>Siga-nos no Instagram</h3>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/web_master16/profilecard/?igsh=MWtoZTE3NDhzYnppaw==n" target="_blank"
+        class="instagram-link">
+        <img src="img/logo.png" alt="Instagram" class="instagram-thumbnail">
+        Instagram
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-column">
+      <h4>Links Rápidos</h4>
+      <a href="index.html">Início</a><br>
+
+      <div class="footer-column">
+        <h4>Redes Sociais</h4>
+        <div class="social-icons">
+          <a href="https://www.facebook.com" target="_blank" title="Facebook">FB</a>
+          <a href="https://www.twitter.com" target="_blank" title="Twitter">TW</a>
+          <a href="https://www.instagram.com" target="_blank" title="Instagram">IG</a>
+          <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">LI</a>
+        </div>
+      </div>
+
+      <div class="footer-column contact-info">
+        <h4>Contato</h4>
+        <p>Telefone: (88) 1234-5678</p>
+        <p>Email: contato@exemplo.com</p>
+        <p>Endereço: Rua Exemplo, 123 - Cidade, Estado</p>
+      </div>
+
+      <div class="copyright">
+        &copy; 2024 <a href="https://www.instagram.com/web_master16/" target="_blank" title="Web Master">Web Master</a>. Todos os
+        direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
