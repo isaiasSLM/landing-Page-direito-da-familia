@@ -491,25 +491,50 @@ body {
   /* Leve aumento para destaque */
 }
 
-
-button {
-  background-color: #5CB9F2;
-  color: #ffffff;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #1D8FF2;
-}
-
 .services {
   margin-bottom: 40px;
   /* Espaçamento inferior para a seção de serviços */
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .services {
+    padding: 40px 20px;
+    /* Reduzindo o padding para dispositivos menores */
+  }
+
+  .services h2 {
+    font-size: 1.8em;
+    /* Reduzindo o tamanho do título */
+    margin-bottom: 30px;
+    /* Ajustando o espaçamento */
+  }
+
+  .services .service {
+    margin: 15px 5px;
+    /* Ajustando a margem das colunas */
+    padding: 20px;
+    /* Reduzindo o padding interno */
+  }
+
+  .services h3 {
+    font-size: 1.4em;
+    /* Tamanho reduzido para o título dos serviços */
+  }
+
+  .services p {
+    font-size: 0.9em;
+    /* Tamanho da fonte reduzido */
+  }
+
+  .services button {
+    padding: 10px 20px;
+    /* Reduzindo o padding do botão */
+    font-size: 0.9em;
+    /* Reduzindo o tamanho da fonte do botão */
+  }
+}
+
 
 /* Seção de Feedbacks */
 .feedbacks {
