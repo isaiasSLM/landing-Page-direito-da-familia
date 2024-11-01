@@ -32,7 +32,7 @@ body {
   background: url('img/fundo.png') center/cover no-repeat;
   /* Adicione sua imagem aqui */
   color: #ffffff;
-  padding: 450px 20px;
+  padding: 265px 20px;
   border-radius: 12px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
   margin-bottom: 30px;
@@ -166,138 +166,199 @@ body {
 
 .about {
   background-color: #ffffff;
-  /* Fundo branco */
-  padding: 30px;
-  /* Espaçamento interno */
+  padding: 20px;
   border-radius: 8px;
-  /* Bordas arredondadas */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  /* Sombra leve */
   margin: 20px auto;
-  /* Margem superior e inferior */
   max-width: 800px;
-  /* Largura máxima */
   text-align: center;
-  /* Centraliza o texto */
 }
 
 .about h2 {
-  color: #151313;
-  /* Cor do título */
-  font-size: 2em;
-  /* Tamanho da fonte */
+  color: #2C3740;
+  font-size: 1.8em;
   margin-bottom: 15px;
 }
 
 .about-content {
   display: flex;
-  /* Alinhamento horizontal */
-  flex-direction: column;
-  /* Direção vertical */
+  flex-direction: row;
   align-items: center;
-  /* Centraliza horizontalmente */
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .about-image {
-  width: 150px;
-  /* Largura da imagem */
-  height: 150px;
-  /* Altura da imagem */
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  /* Borda arredondada (círculo) */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  /* Sombra leve */
-  transition: transform 0.3s;
-  /* Transição suave */
-  margin-bottom: 20px;
-  /* Espaçamento abaixo da imagem */
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
 .about-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos do modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #f2f2f2;
+}
+
+
+.about-image:hover {
   transform: scale(1.05);
-  /* Efeito de aumento ao passar o mouse */
 }
 
 .about-text {
   color: #364559;
-  /* Cor do texto */
-  line-height: 2.6;
-  /* Aumenta a altura da linha para melhor legibilidade */
-  font-size: 1.1em;
-  /* Aumenta um pouco o tamanho da fonte para melhor leitura */
-  margin: 0 auto;
-  /* Centraliza o texto se houver largura máxima */
-  max-width: 800px;
-  /* Limita a largura do texto para melhorar a legibilidade */
+  line-height: 1.6;
+  font-size: 1em;
+  max-width: 600px;
   padding: 15px;
-  /* Adiciona espaçamento interno */
   background-color: #f7f5f54a;
-  /* Adiciona um fundo claro para destacar o texto */
   border-radius: 8px;
-  /* Arredonda os cantos do fundo */
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-  /* Adiciona uma leve sombra para profundidade */
+  text-align: left;
 }
 
 .about-text p {
   margin-bottom: 15px;
-  /* Adiciona espaço entre os parágrafos */
 }
-
 
 .about {
   margin-bottom: 40px;
-  /* Espaçamento inferior para a seção de serviços */
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about h2 {
+    font-size: 1.5em;
+  }
+
+  .about-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-text {
+    font-size: 0.95em;
+    max-width: 100%;
+    padding: 10px;
+  }
 }
 
 @media (max-width: 600px) {
   .about {
-    max-width: 550px;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .about h2 {
+    font-size: 1.4em;
   }
 
   .about-text {
-    max-width: 400px;
+    font-size: 0.9em;
   }
 }
 
 
 .photo-gallery {
-  margin-top: 40px;
-  /* Espaçamento superior para a seção de feedbacks */
-}
-
-.photo-gallery {
-  background-color: #f2f2f2;
-  /* Fundo cinza claro */
-  padding: 30px;
-  /* Espaçamento interno */
-  border-radius: 8px;
-  /* Bordas arredondadas */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  /* Sombra leve */
+  background-color: #f9f9f9;
+  /* Cor de fundo mais leve */
+  padding: 40px 20px;
+  /* Ajuste do espaçamento interno */
+  border-radius: 12px;
+  /* Bordas mais arredondadas */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  /* Sombra mais suave */
   margin: 20px auto;
-  /* Margem superior e inferior */
-  max-width: 800px;
-  /* Largura máxima */
+  max-width: 600px;
+  /* Largura máxima maior para desktop */
   text-align: center;
-  /* Centraliza o texto */
+  transition: box-shadow 0.3s ease;
+  /* Efeito de transição suave */
 }
 
+.photo-gallery:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  /* Sombra mais intensa ao passar o mouse */
+}
 
 .photo-gallery h2 {
-  color: #181919;
-  /* Cor do título */
-  font-size: 2em;
-  /* Tamanho da fonte */
-  margin-bottom: 15px;
-  /* Espaçamento inferior */
+  color: #2C3740;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.photo-gallery img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  margin: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.05);
+  /* Aumento leve ao passar o mouse */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra mais intensa */
 }
 
 @media (max-width: 600px) {
   .photo-gallery {
-    max-width: 400px;
+    max-width: 100%;
+    /* Largura total para dispositivos móveis */
+    padding: 30px 15px;
+  }
+
+  .photo-gallery img {
+    max-width: 90%;
+    /* Reduz as imagens em telas pequenas */
   }
 }
+
 
 
 .carousel {
@@ -354,163 +415,82 @@ body {
   margin-bottom: 15px;
 }
 
-.services .service {
-  background-color: #ffffff;
-  /* Fundo branco para os serviços */
-  padding: 20px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  /* Borda suave */
-  border-radius: 8px;
-  /* Bordas arredondadas */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  /* Sombra leve */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Transições suaves */
-}
-
-.services .service:hover {
-  transform: translateY(-5px);
-  /* Elevação ao passar o mouse */
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-  /* Sombra mais forte ao passar o mouse */
-}
-
-.services h3 {
-  color: #2C3740;
-  /* Cor do título */
-  font-family: 'Arial', sans-serif;
-  /* Tipografia */
-  font-weight: 700;
-  /* Negrito */
-  font-size: 1.5em;
-  /* Tamanho do título */
-  margin-bottom: 10px;
-  /* Margem abaixo do título */
-  text-transform: uppercase;
-  /* Letras maiúsculas */
-  letter-spacing: 1px;
-  /* Espaçamento entre letras */
-}
-
-.services p {
-  color: #555;
-  /* Cor do texto da descrição */
-  font-size: 1em;
-  /* Tamanho do texto da descrição */
-  margin-bottom: 15px;
-  /* Margem abaixo da descrição */
-  line-height: 1.6;
-  /* Altura da linha para melhor legibilidade */
-}
-
+/* Seção de Serviços */
 .services {
-  background-color: #f9f9f9;
-  /* Fundo suave para a seção */
-  padding: 40px 20px;
-  /* Espaçamento na seção */
-  border-radius: 10px;
-  /* Bordas arredondadas para a seção */
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  /* Sombra para a seção */
-}
-
-.services .service {
-  background-color: #ffffff;
-  /* Fundo branco para os serviços */
-  padding: 25px;
-  /* Espaçamento interno aumentado */
-  margin: 15px 0;
-  /* Margem entre os serviços */
-  border: 1px solid #e0e0e0;
-  /* Borda suave */
-  border-radius: 10px;
-  /* Bordas arredondadas */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  /* Transições suaves */
-}
-
-.services .service:hover {
-  transform: translateY(-5px);
-  /* Elevação ao passar o mouse */
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
-  /* Sombra mais forte ao passar o mouse */
-  background-color: #f1f1f1;
-  /* Mudança de cor de fundo ao passar o mouse */
+  background-color: #f3f6fa;
+  /* Fundo mais claro e suave */
+  padding: 60px 30px;
+  /* Aumenta o espaçamento interno para dar mais destaque */
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .services h2 {
-  text-align: center;
-  /* Centraliza o título da seção */
-  color: #1D8FF2;
-  /* Cor do título da seção */
+  color: #2C3740;
   font-family: 'Arial', sans-serif;
-  /* Tipografia */
-  font-size: 2.2em;
-  /* Tamanho do título da seção */
-  margin-bottom: 30px;
-  /* Margem abaixo do título da seção */
+  font-size: 2.4em;
+  font-weight: 700;
+  margin-bottom: 40px;
   text-transform: uppercase;
-  /* Letras maiúsculas */
-  letter-spacing: 2px;
-  /* Espaçamento entre letras */
+  letter-spacing: 1.5px;
+}
+
+.services .service {
+  background-color: #ffffff;
+  padding: 30px;
+  margin: 20px 10px;
+  border: 1px solid #e6e9ed;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.services .service:hover {
+  transform: translateY(-8px);
+  /* Aumenta a elevação */
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+  background-color: #f9fafc;
 }
 
 .services h3 {
   color: #2C3740;
-  /* Cor do título do serviço */
   font-family: 'Arial', sans-serif;
-  /* Tipografia */
-  font-weight: 700;
-  /* Negrito */
-  font-size: 1.5em;
-  /* Tamanho do título do serviço */
-  margin-bottom: 10px;
-  /* Margem abaixo do título do serviço */
+  font-weight: bold;
+  font-size: 1.6em;
+  margin-bottom: 15px;
   text-transform: capitalize;
-  /* Primeira letra maiúscula */
-  letter-spacing: 0.5px;
-  /* Espaçamento entre letras */
+  letter-spacing: 0.8px;
 }
 
 .services p {
-  color: #555;
-  /* Cor do texto da descrição */
+  color: #666;
   font-size: 1em;
-  /* Tamanho do texto da descrição */
-  margin-bottom: 15px;
-  /* Margem abaixo da descrição */
-  line-height: 1.6;
-  /* Altura da linha para melhor legibilidade */
+  margin-bottom: 20px;
+  line-height: 1.7;
+  /* Aumenta a altura da linha para legibilidade */
 }
 
 .services button {
   background-color: #1D8FF2;
-  /* Cor do botão */
   color: #ffffff;
-  /* Cor do texto do botão */
   border: none;
-  /* Remove bordas padrão */
-  padding: 10px 20px;
-  /* Espaçamento interno do botão */
-  border-radius: 5px;
-  /* Bordas arredondadas no botão */
+  padding: 12px 24px;
+  border-radius: 6px;
   font-size: 1em;
-  /* Tamanho do texto do botão */
+  font-weight: bold;
   cursor: pointer;
-  /* Muda o cursor ao passar sobre o botão */
   transition: background-color 0.3s ease, transform 0.3s ease;
-  /* Transições suaves */
 }
 
 .services button:hover {
   background-color: #5CB9F2;
-  /* Mudança de cor ao passar o mouse */
-  transform: scale(1.05);
-  /* Leve aumento ao passar o mouse */
+  transform: scale(1.06);
+  /* Leve aumento para destaque */
 }
+
 
 button {
   background-color: #5CB9F2;
@@ -531,85 +511,82 @@ button:hover {
   /* Espaçamento inferior para a seção de serviços */
 }
 
+/* Seção de Feedbacks */
 .feedbacks {
   margin-top: 40px;
-  /* Espaçamento superior para a seção de feedbacks */
+  background-color: #f2f2f2;
+  padding: 50px 25px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.feedbacks {
-  background-color: #f2f2f2;
-  /* Fundo suave para a seção de feedbacks */
-  padding: 40px 20px;
-  /* Espaçamento interno da seção */
-  border-radius: 10px;
-  /* Bordas arredondadas para a seção */
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  /* Sombra mais pronunciada */
-  text-align: center;
-  /* Centraliza o texto */
+.feedback-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-photo:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .feedbacks h2 {
-  color: #1D8FF2;
-  /* Cor do título */
+  color: #2C3740;
   font-family: 'Arial', sans-serif;
-  /* Tipografia */
-  font-size: 2.2em;
-  /* Tamanho do título */
-  margin-bottom: 30px;
-  /* Margem abaixo do título */
+  font-size: 2.4em;
+  margin-bottom: 35px;
   text-transform: uppercase;
-  /* Letras maiúsculas */
-  letter-spacing: 2px;
-  /* Espaçamento entre letras */
+  letter-spacing: 1.5px;
 }
 
 .feedback {
   background-color: #ffffff;
-  /* Fundo branco para os depoimentos */
-  padding: 25px;
-  /* Espaçamento interno aumentado */
-  margin: 15px 0;
-  /* Margem entre os depoimentos */
+  padding: 30px;
+  margin: 20px 0;
   border-radius: 10px;
-  /* Bordas arredondadas */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  /* Sombra suave */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* Transições suaves */
 }
-
-
-/* Para um espaço ainda maior, você pode ajustar os valores de margem conforme necessário */
 
 .feedback:hover {
   transform: translateY(-5px);
-  /* Elevação ao passar o mouse */
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
-  /* Sombra mais forte ao passar o mouse */
 }
 
 .feedback p {
   font-size: 1.1em;
-  /* Tamanho do texto do depoimento */
   color: #2C3740;
-  /* Cor do texto */
-  line-height: 1.5;
-  /* Altura da linha para melhor legibilidade */
+  line-height: 1.6;
 }
 
 .feedback span {
   display: block;
-  /* Exibe como bloco */
-  margin-top: 10px;
-  /* Margem acima do nome */
+  margin-top: 15px;
   font-weight: bold;
-  /* Texto em negrito */
   color: #5CB9F2;
-  /* Cor do nome */
   font-style: italic;
-  /* Estilo itálico para dar ênfase */
 }
+
+/* Estrelas de Avaliação */
+.stars {
+  margin-top: 10px;
+  color: #FFD700;
+  /* Cor dourada para as estrelas */
+  font-size: 1.2em;
+}
+
+.stars i {
+  margin: 0 2px;
+}
+
+/* Exemplo de estrelas com ícones FontAwesome (adiciona as estrelas em HTML) */
 
 
 .form-section {
@@ -695,7 +672,8 @@ button:hover {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/logo.png') center/cover no-repeat;
   color: #FFFFFF;
   text-align: center;
-  padding: 100px 100px;
+  padding: 100px 20px;
+  /* Reduzindo o padding lateral para dispositivos menores */
   font-family: Arial, sans-serif;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -762,32 +740,79 @@ button:hover {
   left: 100%;
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+  .rede {
+    padding: 60px 20px;
+    /* Menos padding em dispositivos menores */
+  }
+
+  .rede h3 {
+    font-size: 20px;
+    /* Tamanho do título reduzido */
+  }
+
+  .instagram-link {
+    font-size: 16px;
+    /* Tamanho da fonte reduzido */
+    padding: 10px 20px;
+    /* Menos padding para links em dispositivos menores */
+  }
+
+  .instagram-thumbnail {
+    width: 30px;
+    /* Tamanho menor da imagem do Instagram */
+    height: 30px;
+    /* Tamanho menor da imagem do Instagram */
+    margin-right: 10px;
+    /* Margem ajustada */
+  }
+}
+
+@media (max-width: 480px) {
+  .rede h3 {
+    font-size: 18px;
+    /* Tamanho do título ainda menor para smartphones */
+  }
+
+  .instagram-link {
+    padding: 8px 15px;
+    /* Padding ainda menor para smartphones */
+  }
+}
+
 .footer {
-  background-color: #0b0b0b95;
+  background-color: rgba(11, 11, 11, 0.95);
+  /* Mantém a transparência */
   color: #FFFFFF;
-  padding: 10px 20px;
+  padding: 20px 10px;
+  /* Ajustando o padding para melhor espaçamento */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  text-align: left;
+  text-align: center;
+  /* Mudando para centralizar o texto */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   width: 100%;
-  max-width: 12000px;
-  margin: 10px auto;
-  text-align: center;
+  max-width: 1510px;
+  /* Ajustando a largura máxima */
+  margin: 10px;
 }
-
 
 .footer .footer-column {
   flex: 1;
   margin: 10px;
-  min-width: 200px;
+  min-width: 20px;
+  max-width: 3000px;
+  /* Limita a largura das colunas */
 }
 
 .footer h4 {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+  font-size: 1.5em;
+  /* Aumentando o tamanho da fonte */
+  margin-bottom: 15px;
+  /* Ajustando o espaçamento */
   color: #F2F2F2;
 }
 
@@ -804,14 +829,18 @@ button:hover {
 
 .footer .social-icons {
   display: flex;
+  justify-content: center;
+  /* Centralizando os ícones sociais */
   gap: 15px;
   margin-top: 20px;
 }
 
 .footer .social-icons a {
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  /* Aumentando o tamanho do ícone */
+  height: 40px;
+  /* Aumentando o tamanho do ícone */
   background-color: #FFFFFF;
   border-radius: 50%;
   color: #1D8FF2;
@@ -836,4 +865,34 @@ button:hover {
   font-size: 0.85em;
   color: #D9D9D9;
   margin-top: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer {
+    padding: 15px 5px;
+    /* Ajustando padding para dispositivos menores */
+  }
+
+  .footer h4 {
+    font-size: 1.2em;
+    /* Tamanho reduzido para o título */
+  }
+
+  .footer .footer-column {
+    flex: 1 1 100%;
+    /* Colunas ocupam 100% em dispositivos menores */
+    max-width: 100%;
+    /* Largura máxima ajustada */
+  }
+
+  .footer .contact-info p {
+    font-size: 0.8em;
+    /* Tamanho da fonte reduzido */
+  }
+
+  .footer .copyright {
+    font-size: 0.75em;
+    /* Tamanho da fonte reduzido */
+  }
 }

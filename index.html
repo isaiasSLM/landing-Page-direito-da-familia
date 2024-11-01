@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Advocacia em Direito de Família</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -23,7 +24,7 @@
   <section class="about fade-in">
     <h2>Sobre o Advogado</h2>
     <div class="about-content">
-      <img src="img/logo.png" alt="Foto do Advogado" class="about-image">
+      <img src="img/logo.png" alt="Foto do Advogado" class="about-image" onclick="openModal()">
       <div class="about-text fade-in">
         <p>Com mais de 10 anos de experiência na área de direito de família, o advogado Alisson Santos é especialista em
           oferecer soluções jurídicas personalizadas para cada cliente. Seu compromisso é garantir a proteção dos
@@ -34,13 +35,20 @@
     </div>
   </section>
 
+  <!-- Modal para visualização em tela cheia -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="fullImage">
+  </div>
+
+
   <section class="photo-gallery fade-in">
     <h2>Galeria Profissional</h2>
     <div class="carousel">
       <div class="carousel-images fade-in">
-        <img src="img/foto1.png" alt="Foto Profissional 1" class="carousel-image">
-        <img src="img/foto2.png" alt="Foto Profissional 2" class="carousel-image">
-        <img src="img/foto3.png" alt="Foto Profissional 3" class="carousel-image">
+        <img src="img/logo.png" alt="Foto Profissional 1" class="carousel-image">
+        <img src="img/logo.png" alt="Foto Profissional 2" class="carousel-image">
+        <img src="img/logo.png" alt="Foto Profissional 3" class="carousel-image">
       </div>
       <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
       <button class="next" onclick="changeSlide(1)">&#10095;</button>
@@ -96,19 +104,41 @@
   </section>
 
   <!-- Feedbacks -->
+
   <section class="feedbacks fade-in">
     <h2>Depoimentos de Clientes</h2>
+
     <div class="feedback">
+      <img src="img/logo.png" alt="Foto de João Silva" class="feedback-photo" onclick="openImage(this)">
       <p>"O atendimento foi incrível! Me senti apoiado durante todo o processo."</p>
       <span>— João Silva</span>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
     </div>
+
     <div class="feedback">
+      <img src="img/logo.png" alt="Foto de Maria Oliveira" class="feedback-photo" onclick="openImage(this)">
       <p>"Profissionalismo e empatia. Recomendo a todos!"</p>
       <span>— Maria Oliveira</span>
+      <div class="stars">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
     </div>
-    <div class="feedback">
-      <p>"Excelente serviço, senti muita segurança e transparência."</p>
-      <span>— Lucas Santos</span>
+
+    <!-- Adicione outros feedbacks conforme necessário -->
+
+    <!-- Modal para visualização da imagem -->
+    <div id="imageModal" class="modal" onclick="closeImage()">
+      <img class="modal-content" id="modalImage">
     </div>
   </section>
 
@@ -174,7 +204,8 @@
       </div>
 
       <div class="copyright">
-        &copy; 2024 <a href="https://www.instagram.com/web_master16/" target="_blank" title="Web Master">Web Master</a>. Todos os
+        &copy; 2024 <a href="https://www.instagram.com/web_master16/" target="_blank" title="Web Master">Web Master</a>.
+        Todos os
         direitos reservados.
       </div>
     </div>

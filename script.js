@@ -7,6 +7,20 @@ function changeSlide(direction) {
   updateCarousel(); // Atualiza a visualização do carrossel
 }
 
+function openModal() {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("fullImage");
+  const img = document.querySelector(".about-image");
+
+  modal.style.display = "block";
+  modalImg.src = img.src;
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+
 // Função para atualizar o carrossel
 function updateCarousel() {
   const carouselImages = document.querySelector('.carousel-images');
@@ -24,6 +38,8 @@ function selecionarServico(servico) {
   document.getElementById("service").value = servico;
   document.getElementById("service-form").scrollIntoView({ behavior: "smooth" });
 }
+
+
 
 // Função para enviar a mensagem para o WhatsApp
 function enviarWhatsApp(event) {
