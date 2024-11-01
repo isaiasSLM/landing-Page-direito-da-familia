@@ -871,22 +871,29 @@ button:hover {
   /* Ajustando o padding para melhor espaçamento */
   display: flex;
   flex-wrap: wrap;
+  /* Permite que as colunas quebrem em linhas */
   justify-content: space-between;
+  /* Distribui o espaço entre as colunas */
   text-align: center;
-  /* Mudando para centralizar o texto */
+  /* Centralizando o texto */
   border-top-left-radius: 20px;
+  /* Cantos arredondados */
   border-top-right-radius: 20px;
   width: 100%;
+  /* Ocupa 100% da largura */
   max-width: 1510px;
-  /* Ajustando a largura máxima */
-  margin: 10px;
+  /* Largura máxima */
+  margin: 10px auto;
+  /* Centraliza o rodapé */
 }
 
 .footer .footer-column {
   flex: 1;
+  /* Colunas ocupam espaço igual */
   margin: 10px;
-  min-width: 20px;
-  max-width: 3000px;
+  min-width: 150px;
+  /* Largura mínima das colunas */
+  max-width: 300px;
   /* Limita a largura das colunas */
 }
 
@@ -907,6 +914,7 @@ button:hover {
 
 .footer a:hover {
   color: #5CB9F2;
+  /* Mudança de cor no hover */
 }
 
 .footer .social-icons {
@@ -914,39 +922,52 @@ button:hover {
   justify-content: center;
   /* Centralizando os ícones sociais */
   gap: 15px;
+  /* Espaçamento entre ícones */
   margin-top: 20px;
 }
 
 .footer .social-icons a {
   display: inline-block;
   width: 40px;
-  /* Aumentando o tamanho do ícone */
+  /* Tamanho do ícone */
   height: 40px;
-  /* Aumentando o tamanho do ícone */
+  /* Tamanho do ícone */
   background-color: #FFFFFF;
+  /* Fundo branco para ícones */
   border-radius: 50%;
+  /* Formato circular */
   color: #1D8FF2;
   display: flex;
   align-items: center;
+  /* Centraliza verticalmente */
   justify-content: center;
+  /* Centraliza horizontalmente */
   transition: transform 0.3s;
+  /* Transição suave */
 }
 
 .footer .social-icons a:hover {
   transform: scale(1.1);
+  /* Efeito de aumento no hover */
 }
 
 .footer .contact-info p {
   font-size: 0.9em;
+  /* Tamanho da fonte */
   line-height: 1.5;
+  /* Espaçamento entre linhas */
   color: #F2F2F2;
 }
 
 .footer .copyright {
   text-align: center;
+  /* Centraliza o texto */
   font-size: 0.85em;
+  /* Tamanho da fonte */
   color: #D9D9D9;
+  /* Cor da copyright */
   margin-top: 30px;
+  /* Margem superior */
 }
 
 /* Responsividade */
@@ -966,6 +987,8 @@ button:hover {
     /* Colunas ocupam 100% em dispositivos menores */
     max-width: 100%;
     /* Largura máxima ajustada */
+    margin: 10px 0;
+    /* Margem vertical */
   }
 
   .footer .contact-info p {
