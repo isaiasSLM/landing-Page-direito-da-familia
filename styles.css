@@ -540,16 +540,21 @@ body {
 .feedbacks {
   margin-top: 40px;
   background-color: #f2f2f2;
+  /* Fundo suave */
   padding: 50px 25px;
+  /* Espaçamento interno */
   border-radius: 12px;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   max-width: 900px;
+  /* Largura máxima */
   margin: 0 auto;
+  /* Centraliza a seção */
 }
 
 .feedback-photo {
   width: 80px;
+  /* Tamanho da foto */
   height: 80px;
   border-radius: 50%;
   margin-bottom: 10px;
@@ -559,6 +564,7 @@ body {
 
 .feedback-photo:hover {
   transform: scale(1.1);
+  /* Aumenta a foto ao passar o mouse */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -566,15 +572,19 @@ body {
   color: #2C3740;
   font-family: 'Arial', sans-serif;
   font-size: 2.4em;
+  /* Tamanho do título */
   margin-bottom: 35px;
+  /* Espaçamento abaixo do título */
   text-transform: uppercase;
   letter-spacing: 1.5px;
 }
 
 .feedback {
   background-color: #ffffff;
+  /* Fundo branco para feedbacks */
   padding: 30px;
   margin: 20px 0;
+  /* Margem vertical */
   border-radius: 10px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -582,18 +592,23 @@ body {
 
 .feedback:hover {
   transform: translateY(-5px);
+  /* Elevação ao passar o mouse */
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .feedback p {
   font-size: 1.1em;
+  /* Tamanho do texto */
   color: #2C3740;
   line-height: 1.6;
+  /* Altura da linha */
 }
 
 .feedback span {
   display: block;
+  /* Exibe em bloco */
   margin-top: 15px;
+  /* Margem superior */
   font-weight: bold;
   color: #5CB9F2;
   font-style: italic;
@@ -602,14 +617,56 @@ body {
 /* Estrelas de Avaliação */
 .stars {
   margin-top: 10px;
+  /* Margem superior */
   color: #FFD700;
-  /* Cor dourada para as estrelas */
+  /* Cor dourada */
   font-size: 1.2em;
+  /* Tamanho das estrelas */
 }
 
 .stars i {
   margin: 0 2px;
+  /* Margem lateral entre estrelas */
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .feedbacks {
+    padding: 40px 20px;
+    /* Reduzindo o padding em telas menores */
+  }
+
+  .feedbacks h2 {
+    font-size: 1.8em;
+    /* Tamanho do título reduzido */
+    margin-bottom: 20px;
+    /* Ajustando o espaçamento */
+  }
+
+  .feedback {
+    padding: 20px;
+    /* Reduzindo o padding dos feedbacks */
+    margin: 15px 0;
+    /* Margem ajustada */
+  }
+
+  .feedback p {
+    font-size: 1em;
+    /* Tamanho do texto reduzido */
+  }
+
+  .feedback-photo {
+    width: 60px;
+    /* Tamanho reduzido da foto */
+    height: 60px;
+  }
+
+  .stars {
+    font-size: 1em;
+    /* Tamanho das estrelas reduzido */
+  }
+}
+
 
 /* Exemplo de estrelas com ícones FontAwesome (adiciona as estrelas em HTML) */
 
